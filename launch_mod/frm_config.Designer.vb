@@ -25,19 +25,24 @@ Partial Class frm_config
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_config))
         Me.btn_update = New System.Windows.Forms.Button()
         Me.bw_update = New System.ComponentModel.BackgroundWorker()
-        Me.btn_install = New System.Windows.Forms.Button()
+        Me.btn_install_mod_pack = New System.Windows.Forms.Button()
         Me.bw_installmods = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox_config_graphic = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label_info_update_mods = New System.Windows.Forms.Label()
         Me.Label_info_graficos = New System.Windows.Forms.Label()
-        Me.bnt_update_mod_pack = New System.Windows.Forms.Button()
+        Me.btn_update_mod_pack = New System.Windows.Forms.Button()
         Me.ComboBox_perfil_graphic = New System.Windows.Forms.ComboBox()
         Me.Label_info_new_user = New System.Windows.Forms.Label()
         Me.btn_change_perfil_graphic = New System.Windows.Forms.Button()
         Me.btn_reinstall_mod_pack = New System.Windows.Forms.Button()
         Me.Label_info_change_perfil_graphic = New System.Windows.Forms.Label()
         Me.Label_info_reinstall_mod_pack = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.bw_reinstallmods = New System.ComponentModel.BackgroundWorker()
+        Me.bw_changeperfilgraphic = New System.ComponentModel.BackgroundWorker()
+        Me.bw_updatemods = New System.ComponentModel.BackgroundWorker()
+        Me.Label_info_launcher = New System.Windows.Forms.Label()
+        Me.ComboBox_select_launcher = New System.Windows.Forms.ComboBox()
         Me.GroupBox_config_graphic.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +50,7 @@ Partial Class frm_config
         '
         Me.btn_update.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic)
         Me.btn_update.ForeColor = System.Drawing.Color.Black
-        Me.btn_update.Location = New System.Drawing.Point(157, 526)
+        Me.btn_update.Location = New System.Drawing.Point(157, 611)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(185, 28)
         Me.btn_update.TabIndex = 0
@@ -57,16 +62,16 @@ Partial Class frm_config
         Me.bw_update.WorkerReportsProgress = True
         Me.bw_update.WorkerSupportsCancellation = True
         '
-        'btn_install
+        'btn_install_mod_pack
         '
-        Me.btn_install.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.btn_install.ForeColor = System.Drawing.Color.Black
-        Me.btn_install.Location = New System.Drawing.Point(190, 165)
-        Me.btn_install.Name = "btn_install"
-        Me.btn_install.Size = New System.Drawing.Size(114, 28)
-        Me.btn_install.TabIndex = 1
-        Me.btn_install.Text = "install mods"
-        Me.btn_install.UseVisualStyleBackColor = True
+        Me.btn_install_mod_pack.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.btn_install_mod_pack.ForeColor = System.Drawing.Color.Black
+        Me.btn_install_mod_pack.Location = New System.Drawing.Point(190, 165)
+        Me.btn_install_mod_pack.Name = "btn_install_mod_pack"
+        Me.btn_install_mod_pack.Size = New System.Drawing.Size(114, 28)
+        Me.btn_install_mod_pack.TabIndex = 1
+        Me.btn_install_mod_pack.Text = "install mods"
+        Me.btn_install_mod_pack.UseVisualStyleBackColor = True
         '
         'bw_installmods
         '
@@ -77,10 +82,12 @@ Partial Class frm_config
         '
         Me.GroupBox_config_graphic.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox_config_graphic.Controls.Add(Me.Label1)
+        Me.GroupBox_config_graphic.Controls.Add(Me.ComboBox_select_launcher)
+        Me.GroupBox_config_graphic.Controls.Add(Me.Label_info_launcher)
         Me.GroupBox_config_graphic.Controls.Add(Me.Label_info_update_mods)
-        Me.GroupBox_config_graphic.Controls.Add(Me.btn_install)
+        Me.GroupBox_config_graphic.Controls.Add(Me.btn_install_mod_pack)
         Me.GroupBox_config_graphic.Controls.Add(Me.Label_info_graficos)
-        Me.GroupBox_config_graphic.Controls.Add(Me.bnt_update_mod_pack)
+        Me.GroupBox_config_graphic.Controls.Add(Me.btn_update_mod_pack)
         Me.GroupBox_config_graphic.Controls.Add(Me.btn_update)
         Me.GroupBox_config_graphic.Controls.Add(Me.ComboBox_perfil_graphic)
         Me.GroupBox_config_graphic.Controls.Add(Me.Label_info_new_user)
@@ -90,14 +97,27 @@ Partial Class frm_config
         Me.GroupBox_config_graphic.Controls.Add(Me.Label_info_reinstall_mod_pack)
         Me.GroupBox_config_graphic.Font = New System.Drawing.Font("Consolas", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox_config_graphic.ForeColor = System.Drawing.Color.White
-        Me.GroupBox_config_graphic.Location = New System.Drawing.Point(21, 21)
+        Me.GroupBox_config_graphic.Location = New System.Drawing.Point(11, 12)
         Me.GroupBox_config_graphic.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GroupBox_config_graphic.Name = "GroupBox_config_graphic"
         Me.GroupBox_config_graphic.Padding = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.GroupBox_config_graphic.Size = New System.Drawing.Size(510, 568)
+        Me.GroupBox_config_graphic.Size = New System.Drawing.Size(510, 654)
         Me.GroupBox_config_graphic.TabIndex = 4
         Me.GroupBox_config_graphic.TabStop = False
         Me.GroupBox_config_graphic.Text = "Instalación de Mods:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(23, 574)
+        Me.Label1.MaximumSize = New System.Drawing.Size(470, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(320, 18)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "- Buscar actualizaciones de launch_mod."
         '
         'Label_info_update_mods
         '
@@ -125,16 +145,16 @@ Partial Class frm_config
         Me.Label_info_graficos.TabIndex = 10
         Me.Label_info_graficos.Text = "- Selecciona un perfil de configuración gráfica según tu PC:"
         '
-        'bnt_update_mod_pack
+        'btn_update_mod_pack
         '
-        Me.bnt_update_mod_pack.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bnt_update_mod_pack.ForeColor = System.Drawing.Color.Black
-        Me.bnt_update_mod_pack.Location = New System.Drawing.Point(190, 449)
-        Me.bnt_update_mod_pack.Name = "bnt_update_mod_pack"
-        Me.bnt_update_mod_pack.Size = New System.Drawing.Size(114, 30)
-        Me.bnt_update_mod_pack.TabIndex = 9
-        Me.bnt_update_mod_pack.Text = "Actualizar"
-        Me.bnt_update_mod_pack.UseVisualStyleBackColor = True
+        Me.btn_update_mod_pack.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update_mod_pack.ForeColor = System.Drawing.Color.Black
+        Me.btn_update_mod_pack.Location = New System.Drawing.Point(190, 449)
+        Me.btn_update_mod_pack.Name = "btn_update_mod_pack"
+        Me.btn_update_mod_pack.Size = New System.Drawing.Size(114, 30)
+        Me.btn_update_mod_pack.TabIndex = 9
+        Me.btn_update_mod_pack.Text = "Actualizar"
+        Me.btn_update_mod_pack.UseVisualStyleBackColor = True
         '
         'ComboBox_perfil_graphic
         '
@@ -214,18 +234,47 @@ Partial Class frm_config
         Me.Label_info_reinstall_mod_pack.Text = "- Si tienes problemas con el juego, prueba reinstalar el pack de mods, (Esto BORR" &
     "ARÁ tú .minecraft y te pondrá una instalación limpia)."
         '
-        'Label1
+        'bw_reinstallmods
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(23, 496)
-        Me.Label1.MaximumSize = New System.Drawing.Size(470, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(320, 18)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "- Buscar actualizaciones de launch_mod."
+        Me.bw_reinstallmods.WorkerReportsProgress = True
+        Me.bw_reinstallmods.WorkerSupportsCancellation = True
+        '
+        'bw_changeperfilgraphic
+        '
+        Me.bw_changeperfilgraphic.WorkerReportsProgress = True
+        Me.bw_changeperfilgraphic.WorkerSupportsCancellation = True
+        '
+        'bw_updatemods
+        '
+        Me.bw_updatemods.WorkerReportsProgress = True
+        Me.bw_updatemods.WorkerSupportsCancellation = True
+        '
+        'Label_info_launcher
+        '
+        Me.Label_info_launcher.AutoSize = True
+        Me.Label_info_launcher.BackColor = System.Drawing.Color.Transparent
+        Me.Label_info_launcher.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_info_launcher.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label_info_launcher.Location = New System.Drawing.Point(22, 490)
+        Me.Label_info_launcher.MaximumSize = New System.Drawing.Size(470, 0)
+        Me.Label_info_launcher.Name = "Label_info_launcher"
+        Me.Label_info_launcher.Size = New System.Drawing.Size(432, 36)
+        Me.Label_info_launcher.TabIndex = 12
+        Me.Label_info_launcher.Text = "- Selecciona el tipo de launcher entre, premium o no premium."
+        '
+        'ComboBox_select_launcher
+        '
+        Me.ComboBox_select_launcher.DropDownHeight = 80
+        Me.ComboBox_select_launcher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_select_launcher.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_select_launcher.FormattingEnabled = True
+        Me.ComboBox_select_launcher.IntegralHeight = False
+        Me.ComboBox_select_launcher.Items.AddRange(New Object() {"Premium", "No_Premium"})
+        Me.ComboBox_select_launcher.Location = New System.Drawing.Point(154, 531)
+        Me.ComboBox_select_launcher.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ComboBox_select_launcher.Name = "ComboBox_select_launcher"
+        Me.ComboBox_select_launcher.Size = New System.Drawing.Size(194, 26)
+        Me.ComboBox_select_launcher.TabIndex = 12
         '
         'frm_config
         '
@@ -233,7 +282,7 @@ Partial Class frm_config
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(557, 614)
+        Me.ClientSize = New System.Drawing.Size(531, 674)
         Me.Controls.Add(Me.GroupBox_config_graphic)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -250,12 +299,12 @@ Partial Class frm_config
 
     Friend WithEvents btn_update As Button
     Friend WithEvents bw_update As System.ComponentModel.BackgroundWorker
-    Friend WithEvents btn_install As Button
+    Friend WithEvents btn_install_mod_pack As Button
     Friend WithEvents bw_installmods As System.ComponentModel.BackgroundWorker
     Friend WithEvents GroupBox_config_graphic As GroupBox
     Friend WithEvents Label_info_update_mods As Label
     Friend WithEvents Label_info_graficos As Label
-    Friend WithEvents bnt_update_mod_pack As Button
+    Friend WithEvents btn_update_mod_pack As Button
     Friend WithEvents ComboBox_perfil_graphic As ComboBox
     Friend WithEvents Label_info_new_user As Label
     Friend WithEvents btn_change_perfil_graphic As Button
@@ -263,4 +312,9 @@ Partial Class frm_config
     Friend WithEvents Label_info_change_perfil_graphic As Label
     Friend WithEvents Label_info_reinstall_mod_pack As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents bw_reinstallmods As System.ComponentModel.BackgroundWorker
+    Friend WithEvents bw_changeperfilgraphic As System.ComponentModel.BackgroundWorker
+    Friend WithEvents bw_updatemods As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label_info_launcher As Label
+    Friend WithEvents ComboBox_select_launcher As ComboBox
 End Class

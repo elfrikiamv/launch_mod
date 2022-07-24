@@ -27,6 +27,7 @@ Partial Class Form1
         Me.btn_config = New System.Windows.Forms.Button()
         Me.btn_info = New System.Windows.Forms.Button()
         Me.bw_checkupdate = New System.ComponentModel.BackgroundWorker()
+        Me.bw_openlaunchermc = New System.ComponentModel.BackgroundWorker()
         Me.SuspendLayout()
         '
         'btn_play
@@ -61,6 +62,11 @@ Partial Class Form1
         Me.bw_checkupdate.WorkerReportsProgress = True
         Me.bw_checkupdate.WorkerSupportsCancellation = True
         '
+        'bw_openlaunchermc
+        '
+        Me.bw_openlaunchermc.WorkerReportsProgress = True
+        Me.bw_openlaunchermc.WorkerSupportsCancellation = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -85,4 +91,5 @@ Partial Class Form1
     Friend WithEvents btn_config As Button
     Friend WithEvents btn_info As Button
     Friend WithEvents bw_checkupdate As System.ComponentModel.BackgroundWorker
+    Friend WithEvents bw_openlaunchermc As System.ComponentModel.BackgroundWorker
 End Class
