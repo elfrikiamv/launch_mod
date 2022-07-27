@@ -28,6 +28,7 @@ Partial Class Form1
         Me.btn_info = New System.Windows.Forms.Button()
         Me.bw_checkupdate = New System.ComponentModel.BackgroundWorker()
         Me.bw_openlaunchermc = New System.ComponentModel.BackgroundWorker()
+        Me.ComboBox_select_launcher = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'btn_play
@@ -67,6 +68,20 @@ Partial Class Form1
         Me.bw_openlaunchermc.WorkerReportsProgress = True
         Me.bw_openlaunchermc.WorkerSupportsCancellation = True
         '
+        'ComboBox_select_launcher
+        '
+        Me.ComboBox_select_launcher.DropDownHeight = 80
+        Me.ComboBox_select_launcher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_select_launcher.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_select_launcher.FormattingEnabled = True
+        Me.ComboBox_select_launcher.IntegralHeight = False
+        Me.ComboBox_select_launcher.Items.AddRange(New Object() {"Premium", "No_Premium"})
+        Me.ComboBox_select_launcher.Location = New System.Drawing.Point(389, 222)
+        Me.ComboBox_select_launcher.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.ComboBox_select_launcher.Name = "ComboBox_select_launcher"
+        Me.ComboBox_select_launcher.Size = New System.Drawing.Size(194, 26)
+        Me.ComboBox_select_launcher.TabIndex = 13
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -75,6 +90,7 @@ Partial Class Form1
         Me.BackgroundImage = Global.launch_mod.My.Resources.Resources.bg_launcher
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(973, 470)
+        Me.Controls.Add(Me.ComboBox_select_launcher)
         Me.Controls.Add(Me.btn_info)
         Me.Controls.Add(Me.btn_config)
         Me.Controls.Add(Me.btn_play)
@@ -92,4 +108,5 @@ Partial Class Form1
     Friend WithEvents btn_info As Button
     Friend WithEvents bw_checkupdate As System.ComponentModel.BackgroundWorker
     Friend WithEvents bw_openlaunchermc As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ComboBox_select_launcher As ComboBox
 End Class

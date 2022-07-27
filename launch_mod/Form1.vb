@@ -21,8 +21,8 @@ Public Class Form1
 
     Private Sub btn_config_Click(sender As Object, e As EventArgs) Handles btn_config.Click
 
-        'open form frm_config
-        frm_config.ShowDialog()
+        'open form frm_configm
+        frm_configm.ShowDialog()
 
     End Sub
 
