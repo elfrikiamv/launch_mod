@@ -30,7 +30,14 @@ Public Class frm_perfilg
             Return
         End If
 
-        bw_installpg.RunWorkerAsync()
+        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
+
+        If File.Exists(raiz_txt) Then
+            MsgBox("Ups!, ya tienes un perfil gráfico, puedes cambiarlo.", MsgBoxStyle.Critical, "#")
+            Return
+        Else
+            bw_installpg.RunWorkerAsync()
+        End If
 
     End Sub
 

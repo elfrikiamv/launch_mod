@@ -25,6 +25,7 @@ Partial Class frm_launchermc
         Me.ComboBox_select_launcher = New System.Windows.Forms.ComboBox()
         Me.Label_info_launcher = New System.Windows.Forms.Label()
         Me.btn_savelaunchermc = New System.Windows.Forms.Button()
+        Me.bw_savelaunchermc = New System.ComponentModel.BackgroundWorker()
         Me.SuspendLayout()
         '
         'ComboBox_select_launcher
@@ -65,6 +66,11 @@ Partial Class frm_launchermc
         Me.btn_savelaunchermc.Text = "Guardar"
         Me.btn_savelaunchermc.UseVisualStyleBackColor = True
         '
+        'bw_savelaunchermc
+        '
+        Me.bw_savelaunchermc.WorkerReportsProgress = True
+        Me.bw_savelaunchermc.WorkerSupportsCancellation = True
+        '
         'frm_launchermc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -84,4 +90,5 @@ Partial Class frm_launchermc
     Friend WithEvents ComboBox_select_launcher As ComboBox
     Friend WithEvents Label_info_launcher As Label
     Friend WithEvents btn_savelaunchermc As Button
+    Friend WithEvents bw_savelaunchermc As System.ComponentModel.BackgroundWorker
 End Class

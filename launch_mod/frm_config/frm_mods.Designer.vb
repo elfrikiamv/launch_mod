@@ -31,7 +31,6 @@ Partial Class frm_mods
         Me.bw_installmods = New System.ComponentModel.BackgroundWorker()
         Me.bw_updatemods = New System.ComponentModel.BackgroundWorker()
         Me.bw_reinstallmods = New System.ComponentModel.BackgroundWorker()
-        Me.ComboBox_perfil_graphic = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label_info_update_mods
@@ -123,27 +122,12 @@ Partial Class frm_mods
         Me.bw_reinstallmods.WorkerReportsProgress = True
         Me.bw_reinstallmods.WorkerSupportsCancellation = True
         '
-        'ComboBox_perfil_graphic
-        '
-        Me.ComboBox_perfil_graphic.DropDownHeight = 80
-        Me.ComboBox_perfil_graphic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox_perfil_graphic.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_perfil_graphic.FormattingEnabled = True
-        Me.ComboBox_perfil_graphic.IntegralHeight = False
-        Me.ComboBox_perfil_graphic.Items.AddRange(New Object() {"alto", "normal", "bajo"})
-        Me.ComboBox_perfil_graphic.Location = New System.Drawing.Point(151, 33)
-        Me.ComboBox_perfil_graphic.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.ComboBox_perfil_graphic.Name = "ComboBox_perfil_graphic"
-        Me.ComboBox_perfil_graphic.Size = New System.Drawing.Size(182, 26)
-        Me.ComboBox_perfil_graphic.TabIndex = 18
-        '
         'frm_mods
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(487, 450)
-        Me.Controls.Add(Me.ComboBox_perfil_graphic)
         Me.Controls.Add(Me.Label_info_update_mods)
         Me.Controls.Add(Me.btn_install_mod_pack)
         Me.Controls.Add(Me.btn_update_mod_pack)
@@ -166,5 +150,4 @@ Partial Class frm_mods
     Friend WithEvents bw_installmods As System.ComponentModel.BackgroundWorker
     Friend WithEvents bw_updatemods As System.ComponentModel.BackgroundWorker
     Friend WithEvents bw_reinstallmods As System.ComponentModel.BackgroundWorker
-    Friend WithEvents ComboBox_perfil_graphic As ComboBox
 End Class

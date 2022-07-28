@@ -23,22 +23,23 @@ Public Class frm_mods
         'comprobación de requerimientos para instalar los mods
         If My.Computer.Network.IsAvailable = False Then
             MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
-            Return
-        End If
-
-        If ComboBox_perfil_graphic.SelectedItem = Nothing Then
-            MsgBox("Selecciona una configuración gráfica!", MsgBoxStyle.Exclamation, "#")
-            Return
         End If
 
         Dim ruta As String = appdata & "\.minecraft"
+        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
 
         If Directory.Exists(ruta) Then
+
             MsgBox("¡Ya tienes una carpeta .minecraft! Debes borrarla para continuar.", MsgBoxStyle.Exclamation, "#")
-            Return
+        ElseIf File.Exists(raiz_txt) Then
+
+            bw_installmods.RunWorkerAsync()
+        Else
+
+            MsgBox("Selecciona un perfil gráfico!", MsgBoxStyle.Exclamation, "#")
         End If
 
-        bw_installmods.RunWorkerAsync()
+
 
     End Sub
 
@@ -46,20 +47,22 @@ Public Class frm_mods
 
         'comprobación de requerimientos para reinstalar los mods
         If My.Computer.Network.IsAvailable = False Then
-            MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
-            Return
-        End If
 
-        If ComboBox_perfil_graphic.SelectedItem = Nothing Then
-            MsgBox("Selecciona una configuración gráfica!", MsgBoxStyle.Exclamation, "#")
-            Return
+            MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
         End If
 
         Dim ruta As String = appdata & "\.minecraft"
+        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
 
         If Directory.Exists(ruta) Then
-            bw_installmods.RunWorkerAsync()
+
+            If File.Exists(raiz_txt) Then
+                bw_reinstallmods.RunWorkerAsync()
+            Else
+                MsgBox("Selecciona un perfil gráfico!", MsgBoxStyle.Exclamation, "#")
+            End If
         Else
+
             MsgBox("Ups!, no se encontro tu .minecraft.", MsgBoxStyle.Critical, "#")
         End If
 
@@ -86,10 +89,14 @@ Public Class frm_mods
     Private Sub bw_installmods_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_installmods.DoWork
 
         'agarra que perfil grafico va a utilizar
-        Dim perfil_graphic As String = ComboBox_perfil_graphic.SelectedItem
+        'Dim perfil_graphic As String = ComboBox_perfil_graphic.SelectedItem
 
         'path install launch-mod
         Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
+
+        'leé perfil-graphic.txt y lo guarda en perfil_graphic_read
+        Dim perfil_graphic_read As String
+        perfil_graphic_read = My.Computer.FileSystem.ReadAllText(raiz & "\perfil-graphic.txt")
 
         'connection_host = perfiles graficos link download
         My.Computer.Network.DownloadFile((host_update), (raiz & "\connection-perfil-graphic.txt"), "", "", False, 2000, True)
@@ -105,19 +112,19 @@ Public Class frm_mods
         My.Computer.Network.DownloadFile((connection_sure), (program_files & "\AmvPrograms\launch-mod\mc\sure.zip"), "", "", True, 2000, True)
 
         'download perfil_graphic.zip
-        My.Computer.Network.DownloadFile((connection_host & "/" & perfil_graphic & ".zip"), (program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip"), "", "", True, 2000, True)
+        My.Computer.Network.DownloadFile((connection_host & "/" & perfil_graphic_read & ".zip"), (program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip"), "", "", True, 2000, True)
 
         'unzip sure.zip
         ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\sure.zip", appdata & "\")
 
         'unzip perfil_graphic.zip
-        ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip", appdata & "\.minecraft")
+        ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip", appdata & "\.minecraft")
 
         'delete restos
         File.Delete(raiz & "\connection-perfil-graphic.txt")
         File.Delete(raiz & "\connection-sure.txt")
         File.Delete(program_files & "\AmvPrograms\launch-mod\mc\sure.zip")
-        File.Delete(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip")
+        File.Delete(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip")
 
         MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
 
@@ -162,10 +169,14 @@ Public Class frm_mods
     Private Sub bw_reinstallmods_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_reinstallmods.DoWork
 
         'agarra que perfil grafico va a utilizar
-        Dim perfil_graphic As String = ComboBox_perfil_graphic.SelectedItem
+        'Dim perfil_graphic As String = ComboBox_perfil_graphic.SelectedItem
 
         'path install launch-mod
         Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
+
+        'leé perfil-graphic.txt y lo guarda en perfil_graphic_read
+        Dim perfil_graphic_read As String
+        perfil_graphic_read = My.Computer.FileSystem.ReadAllText(raiz & "\perfil-graphic.txt")
 
         'connection_host = perfiles graficos link download
         My.Computer.Network.DownloadFile((host_update), (raiz & "\connection-perfil-graphic.txt"), "", "", False, 2000, True)
@@ -184,19 +195,19 @@ Public Class frm_mods
         My.Computer.Network.DownloadFile((connection_sure), (program_files & "\AmvPrograms\launch-mod\mc\sure.zip"), "", "", True, 2000, True)
 
         'download perfil_graphic.zip
-        My.Computer.Network.DownloadFile((connection_host & "/" & perfil_graphic & ".zip"), (program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip"), "", "", True, 2000, True)
+        My.Computer.Network.DownloadFile((connection_host & "/" & perfil_graphic_read & ".zip"), (program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip"), "", "", True, 2000, True)
 
         'unzip sure.zip
         ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\sure.zip", appdata & "\")
 
         'unzip perfil_graphic.zip
-        ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip", appdata & "\.minecraft")
+        ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip", appdata & "\.minecraft")
 
         'delete restos
         File.Delete(raiz & "\connection-perfil-graphic.txt")
         File.Delete(raiz & "\connection-sure.txt")
         File.Delete(program_files & "\AmvPrograms\launch-mod\mc\sure.zip")
-        File.Delete(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic & ".zip")
+        File.Delete(program_files & "\AmvPrograms\launch-mod\mc\" & perfil_graphic_read & ".zip")
 
         MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
 

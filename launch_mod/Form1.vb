@@ -29,13 +29,14 @@ Public Class Form1
     Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
 
         'comprobación de requerimientos para abrir el launcher mc
-        If ComboBox_select_launcher.SelectedItem = Nothing Then
-            MsgBox("Selecciona un tipo de Launcher!", MsgBoxStyle.Exclamation, "#")
-            Return
+        Dim launchermc_txt As String = program_files & "\AmvPrograms\launch-mod\launcher-mc.txt"
+        If File.Exists(launchermc_txt) Then
+
+            bw_openlaunchermc.RunWorkerAsync()
+        Else
+
+            MsgBox("¡No has seleccionado con qué tipo de launcher ejecutar el juego!.", MsgBoxStyle.Critical, "#")
         End If
-
-        bw_openlaunchermc.RunWorkerAsync()
-
     End Sub
 
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
@@ -83,11 +84,15 @@ Public Class Form1
 
     Private Sub bw_openlaunchermc_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_openlaunchermc.DoWork
 
-        'agarra que launcher se va a abrir
-        Dim launcher_mc As String = ComboBox_select_launcher.SelectedItem
+        'path install launch-mod
+        Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
+
+        'leé launcher-mc.txt y lo guarda en launcher-mc_read
+        Dim launcher_mc_read As String
+        launcher_mc_read = My.Computer.FileSystem.ReadAllText(raiz & "\launcher-mc.txt")
 
         'path of launcher mc
-        Dim ruta_mc As String = program_files & "\AmvPrograms\ecmods\mc\" & launcher_mc & ".exe"
+        Dim ruta_mc As String = program_files & "\AmvPrograms\launch-mod\mc\" & launcher_mc_read & ".exe"
 
         'run launcher mc
         Dim open_launcher_mc As New Process()
