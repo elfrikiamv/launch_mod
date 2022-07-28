@@ -154,6 +154,15 @@
     <EmbeddedResource Include="frm_configm.resx">
       <DependentUpon>frm_configm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_config\frm_launchermc.resx">
+      <DependentUpon>frm_launchermc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_config\frm_mods.resx">
+      <DependentUpon>frm_mods.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_config\frm_perfilg.resx">
+      <DependentUpon>frm_perfilg.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_info.resx">
       <DependentUpon>frm_info.vb</DependentUpon>
     </EmbeddedResource>

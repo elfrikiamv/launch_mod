@@ -23,6 +23,7 @@
             pnl_containerfrm.Controls.Add(Formulario)
             pnl_containerfrm.Tag = Formulario
             Formulario.Show()
+
             'coloco el frm siempre enfrente de otro
             Formulario.BringToFront()
         Else
@@ -35,6 +36,9 @@
 
         'invocamos al metodo AbrirFormEnPanel
         AbrirFormEnPanel(Of frm_mods)()
+
+        'change bgcolor of btn
+        'btn_packmods.BackColor = Color.FromArgb(12, 61, 92)
     End Sub
 
     Private Sub btn_configgrafica_Click(sender As Object, e As EventArgs) Handles btn_configgrafica.Click

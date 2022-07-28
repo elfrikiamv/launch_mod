@@ -33,7 +33,7 @@ Partial Class frm_configm
         '
         'pnl_containerbtn
         '
-        Me.pnl_containerbtn.BackColor = System.Drawing.Color.Black
+        Me.pnl_containerbtn.BackColor = System.Drawing.Color.DimGray
         Me.pnl_containerbtn.Controls.Add(Me.btn_launchmc)
         Me.pnl_containerbtn.Controls.Add(Me.btn_configgrafica)
         Me.pnl_containerbtn.Controls.Add(Me.btn_packmods)
@@ -45,16 +45,16 @@ Partial Class frm_configm
         '
         'pnl_containerfrm
         '
-        Me.pnl_containerfrm.BackColor = System.Drawing.Color.DimGray
+        Me.pnl_containerfrm.BackColor = System.Drawing.Color.WhiteSmoke
         Me.pnl_containerfrm.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_containerfrm.Location = New System.Drawing.Point(142, 0)
         Me.pnl_containerfrm.Name = "pnl_containerfrm"
-        Me.pnl_containerfrm.Size = New System.Drawing.Size(720, 451)
+        Me.pnl_containerfrm.Size = New System.Drawing.Size(505, 451)
         Me.pnl_containerfrm.TabIndex = 1
         '
         'btn_packmods
         '
-        Me.btn_packmods.Location = New System.Drawing.Point(-1, 119)
+        Me.btn_packmods.Location = New System.Drawing.Point(-1, 183)
         Me.btn_packmods.Name = "btn_packmods"
         Me.btn_packmods.Size = New System.Drawing.Size(145, 48)
         Me.btn_packmods.TabIndex = 0
@@ -63,7 +63,7 @@ Partial Class frm_configm
         '
         'btn_configgrafica
         '
-        Me.btn_configgrafica.Location = New System.Drawing.Point(-1, 172)
+        Me.btn_configgrafica.Location = New System.Drawing.Point(-1, 132)
         Me.btn_configgrafica.Name = "btn_configgrafica"
         Me.btn_configgrafica.Size = New System.Drawing.Size(145, 48)
         Me.btn_configgrafica.TabIndex = 1
@@ -72,7 +72,7 @@ Partial Class frm_configm
         '
         'btn_launchmc
         '
-        Me.btn_launchmc.Location = New System.Drawing.Point(-1, 226)
+        Me.btn_launchmc.Location = New System.Drawing.Point(-1, 235)
         Me.btn_launchmc.Name = "btn_launchmc"
         Me.btn_launchmc.Size = New System.Drawing.Size(145, 48)
         Me.btn_launchmc.TabIndex = 2
@@ -84,7 +84,7 @@ Partial Class frm_configm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(862, 451)
+        Me.ClientSize = New System.Drawing.Size(647, 451)
         Me.Controls.Add(Me.pnl_containerfrm)
         Me.Controls.Add(Me.pnl_containerbtn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

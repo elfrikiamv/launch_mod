@@ -151,7 +151,7 @@ Public Class frm_config
         Dim ruta As String = appdata & "\.minecraft"
 
         If Directory.Exists(ruta) Then
-            bw_installmods.RunWorkerAsync()
+            bw_reinstallmods.RunWorkerAsync()
         Else
             MsgBox("Ups!, no se encontro tu .minecraft.", MsgBoxStyle.Critical, "#")
         End If
