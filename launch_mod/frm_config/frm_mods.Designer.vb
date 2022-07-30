@@ -50,11 +50,11 @@ Partial Class frm_mods
         '
         Me.btn_install_mod_pack.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic)
         Me.btn_install_mod_pack.ForeColor = System.Drawing.Color.Black
-        Me.btn_install_mod_pack.Location = New System.Drawing.Point(180, 151)
+        Me.btn_install_mod_pack.Location = New System.Drawing.Point(177, 151)
         Me.btn_install_mod_pack.Name = "btn_install_mod_pack"
-        Me.btn_install_mod_pack.Size = New System.Drawing.Size(114, 28)
+        Me.btn_install_mod_pack.Size = New System.Drawing.Size(121, 28)
         Me.btn_install_mod_pack.TabIndex = 12
-        Me.btn_install_mod_pack.Text = "install mods"
+        Me.btn_install_mod_pack.Text = "instalar mods"
         Me.btn_install_mod_pack.UseVisualStyleBackColor = True
         '
         'btn_update_mod_pack

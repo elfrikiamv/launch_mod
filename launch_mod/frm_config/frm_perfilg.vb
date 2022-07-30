@@ -9,7 +9,7 @@ Public Class frm_perfilg
     'path program files
     Dim program_files As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)
     'link perfil_grafico.zip
-    Dim host_perfil_graphic As String = "https://pastebin.com/raw/8WkGED1G"
+    Dim host_perfil_graphic As String = "https://pastebin.com/raw/SeYj4QG0"
 
     Private Sub frm_perfilg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -191,9 +191,9 @@ Public Class frm_perfilg
         If (perfil_graphic_read = "alto") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection-perfil-graphic.txt"), "", "", False, 2000, True)
             Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
+            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection-perfil-graphic.txt")
 
             'download perfil_graphic.zip
             My.Computer.Network.DownloadFile((connection_host & "/alto.zip"), (program_files & "\AmvPrograms\launch-mod\mc\alto.zip"), "", "", True, 2000, True)
@@ -202,7 +202,7 @@ Public Class frm_perfilg
             ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\alto.zip", appdata & "\.minecraft")
 
             'delete restos
-            File.Delete(raiz & "\connection.txt")
+            File.Delete(raiz & "\connection-perfil-graphic.txt.txt")
             File.Delete(program_files & "\AmvPrograms\launch-mod\mc\alto.zip")
 
             MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
@@ -211,9 +211,9 @@ Public Class frm_perfilg
         ElseIf (perfil_graphic_read = "normal") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection-perfil-graphic.txt"), "", "", False, 2000, True)
             Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
+            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection-perfil-graphic.txt")
 
             'download perfil_graphic.zip
             My.Computer.Network.DownloadFile((connection_host & "/normal.zip"), (program_files & "\AmvPrograms\launch-mod\mc\normal.zip"), "", "", True, 2000, True)
@@ -222,7 +222,7 @@ Public Class frm_perfilg
             ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\normal.zip", appdata & "\.minecraft")
 
             'delete restos
-            File.Delete(raiz & "\connection.txt")
+            File.Delete(raiz & "\connection-perfil-graphic.txt")
             File.Delete(program_files & "\AmvPrograms\launch-mod\mc\normal.zip")
 
             MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
@@ -231,9 +231,9 @@ Public Class frm_perfilg
         ElseIf (perfil_graphic_read = "bajo") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection-perfil-graphic.txt"), "", "", False, 2000, True)
             Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
+            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection-perfil-graphic.txt")
 
             'download perfil_graphic.zip
             My.Computer.Network.DownloadFile((connection_host & "/bajo.zip"), (program_files & "\AmvPrograms\launch-mod\mc\bajo.zip"), "", "", True, 2000, True)
@@ -242,7 +242,7 @@ Public Class frm_perfilg
             ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\bajo.zip", appdata & "\.minecraft")
 
             'delete restos
-            File.Delete(raiz & "\connection.txt")
+            File.Delete(raiz & "\connection-perfil-graphic.txt")
             File.Delete(program_files & "\AmvPrograms\launch-mod\mc\bajo.zip")
 
             MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
