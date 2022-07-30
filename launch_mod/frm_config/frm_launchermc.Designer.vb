@@ -35,11 +35,11 @@ Partial Class frm_launchermc
         Me.ComboBox_select_launcher.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_select_launcher.FormattingEnabled = True
         Me.ComboBox_select_launcher.IntegralHeight = False
-        Me.ComboBox_select_launcher.Items.AddRange(New Object() {"Premium", "No_Premium"})
-        Me.ComboBox_select_launcher.Location = New System.Drawing.Point(144, 239)
+        Me.ComboBox_select_launcher.Items.AddRange(New Object() {"Minecraft_(original).exe", "SKlauncher_3-beta.21.exe"})
+        Me.ComboBox_select_launcher.Location = New System.Drawing.Point(111, 239)
         Me.ComboBox_select_launcher.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.ComboBox_select_launcher.Name = "ComboBox_select_launcher"
-        Me.ComboBox_select_launcher.Size = New System.Drawing.Size(194, 26)
+        Me.ComboBox_select_launcher.Size = New System.Drawing.Size(228, 26)
         Me.ComboBox_select_launcher.TabIndex = 13
         '
         'Label_info_launcher
@@ -59,7 +59,7 @@ Partial Class frm_launchermc
         '
         Me.btn_savelaunchermc.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_savelaunchermc.ForeColor = System.Drawing.Color.Black
-        Me.btn_savelaunchermc.Location = New System.Drawing.Point(168, 282)
+        Me.btn_savelaunchermc.Location = New System.Drawing.Point(169, 282)
         Me.btn_savelaunchermc.Name = "btn_savelaunchermc"
         Me.btn_savelaunchermc.Size = New System.Drawing.Size(114, 28)
         Me.btn_savelaunchermc.TabIndex = 16

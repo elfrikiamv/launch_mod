@@ -30,12 +30,20 @@ Public Class Form1
 
         'comprobación de requerimientos para abrir el launcher mc
         Dim launchermc_txt As String = program_files & "\AmvPrograms\launch-mod\launcher-mc.txt"
+
         If File.Exists(launchermc_txt) Then
 
             bw_openlaunchermc.RunWorkerAsync()
         Else
 
-            MsgBox("¡No has seleccionado con qué tipo de launcher ejecutar el juego!.", MsgBoxStyle.Critical, "#")
+            Dim launchermc_true As String
+            launchermc_true = MsgBox("¡No has seleccionado con qué tipo de launcher ejecutar el juego!." & vbNewLine & "¿Quieres ir a seleccionar uno?", vbYesNo)
+
+            If (launchermc_true = vbYes) Then
+
+                'open form frm_configm
+                frm_configm.ShowDialog()
+            End If
         End If
     End Sub
 
@@ -92,7 +100,7 @@ Public Class Form1
         launcher_mc_read = My.Computer.FileSystem.ReadAllText(raiz & "\launcher-mc.txt")
 
         'path of launcher mc
-        Dim ruta_mc As String = program_files & "\AmvPrograms\launch-mod\mc\" & launcher_mc_read & ".exe"
+        Dim ruta_mc As String = program_files & "\AmvPrograms\launch-mod\mc\" & launcher_mc_read
 
         'run launcher mc
         Dim open_launcher_mc As New Process()

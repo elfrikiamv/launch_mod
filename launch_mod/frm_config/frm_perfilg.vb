@@ -9,7 +9,7 @@ Public Class frm_perfilg
     'path program files
     Dim program_files As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)
     'link perfil_grafico.zip
-    Dim host_update As String = "https://pastebin.com/raw/8WkGED1G"
+    Dim host_perfil_graphic As String = "https://pastebin.com/raw/8WkGED1G"
 
     Private Sub frm_perfilg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -26,140 +26,143 @@ Public Class frm_perfilg
         End If
 
         If ComboBox_perfil_graphic.SelectedItem = Nothing Then
-            MsgBox("Selecciona una configuración gráfica!", MsgBoxStyle.Exclamation, "#")
+            MsgBox("Selecciona un perfil gráfico!", MsgBoxStyle.Exclamation, "#")
             Return
         End If
 
-        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
+        Dim dirminecraft As String = appdata & "\.minecraft"
 
-        If File.Exists(raiz_txt) Then
-            MsgBox("Ups!, ya tienes un perfil gráfico, puedes cambiarlo.", MsgBoxStyle.Critical, "#")
-            Return
+        If Directory.Exists(dirminecraft) Then
+
+            Dim pg_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
+
+            If File.Exists(pg_txt) Then
+
+                Dim launchermc_true As String
+                launchermc_true = MsgBox("¡Ya cuentas con un perfil gráfico seleccionado!" & vbNewLine & "¿Quiere cambiarlo?", vbYesNo)
+
+                If (launchermc_true = vbYes) Then
+
+                    'delete perfil_graphic_files
+                    Dim options_txt As String = appdata & "\.minecraft\options.txt"
+                    Dim perfil_txt As String = appdata & "\.minecraft\perfil.txt"
+                    Dim servers_dat As String = appdata & "\.minecraft\servers.dat"
+
+                    If File.Exists(options_txt) Then
+
+                        File.Delete(appdata & "\.minecraft\options.txt")
+
+                        If File.Exists(perfil_txt) Then
+
+                            File.Delete(appdata & "\.minecraft\perfil.txt")
+
+                            If File.Exists(servers_dat) Then
+
+                                File.Delete(appdata & "\.minecraft\servers.dat")
+
+                                bw_installpg.RunWorkerAsync()
+                            Else
+
+                                bw_installpg.RunWorkerAsync()
+                            End If
+                        Else
+
+                            If File.Exists(servers_dat) Then
+
+                                File.Delete(appdata & "\.minecraft\servers.dat")
+
+                                bw_installpg.RunWorkerAsync()
+                            Else
+
+                                bw_installpg.RunWorkerAsync()
+                            End If
+                        End If
+                    ElseIf File.Exists(perfil_txt) Then
+
+                        File.Delete(appdata & "\.minecraft\perfil.txt")
+
+                        If File.Exists(servers_dat) Then
+
+                            File.Delete(appdata & "\.minecraft\servers.dat")
+
+                            bw_installpg.RunWorkerAsync()
+                        Else
+
+                            bw_installpg.RunWorkerAsync()
+                        End If
+                    ElseIf File.Exists(servers_dat) Then
+
+                        File.Delete(appdata & "\.minecraft\servers.dat")
+
+                        bw_installpg.RunWorkerAsync()
+                    Else
+                        bw_installpg.RunWorkerAsync()
+                    End If
+
+                End If
+            Else
+
+                'delete perfil_graphic_files
+                Dim options_txt As String = appdata & "\.minecraft\options.txt"
+                Dim perfil_txt As String = appdata & "\.minecraft\perfil.txt"
+                Dim servers_dat As String = appdata & "\.minecraft\servers.dat"
+
+                If File.Exists(options_txt) Then
+
+                    File.Delete(appdata & "\.minecraft\options.txt")
+
+                    If File.Exists(perfil_txt) Then
+
+                        File.Delete(appdata & "\.minecraft\perfil.txt")
+
+                        If File.Exists(servers_dat) Then
+
+                            File.Delete(appdata & "\.minecraft\servers.dat")
+
+                            bw_installpg.RunWorkerAsync()
+                        Else
+
+                            bw_installpg.RunWorkerAsync()
+                        End If
+                    Else
+
+                        If File.Exists(servers_dat) Then
+
+                            File.Delete(appdata & "\.minecraft\servers.dat")
+
+                            bw_installpg.RunWorkerAsync()
+                        Else
+
+                            bw_installpg.RunWorkerAsync()
+                        End If
+                    End If
+                ElseIf File.Exists(perfil_txt) Then
+
+                    File.Delete(appdata & "\.minecraft\perfil.txt")
+
+                    If File.Exists(servers_dat) Then
+
+                        File.Delete(appdata & "\.minecraft\servers.dat")
+
+                        bw_installpg.RunWorkerAsync()
+                    Else
+
+                        bw_installpg.RunWorkerAsync()
+                    End If
+                ElseIf File.Exists(servers_dat) Then
+
+                    File.Delete(appdata & "\.minecraft\servers.dat")
+
+                    bw_installpg.RunWorkerAsync()
+                Else
+                    bw_installpg.RunWorkerAsync()
+                End If
+
+            End If
         Else
-            bw_installpg.RunWorkerAsync()
+
+            MsgBox("No se encontró tu .minecraft, prueba instalar el pack de mods primero :D", MsgBoxStyle.Exclamation, "#")
         End If
-
-    End Sub
-
-    Private Sub btn_change_perfil_graphic_Click(sender As Object, e As EventArgs) Handles btn_change_perfil_graphic.Click
-
-        'comprobación de requerimientos para cambiar el perfil grafico 
-        If My.Computer.Network.IsAvailable = False Then
-            MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
-            Return
-        End If
-
-        If ComboBox_perfil_graphic.SelectedItem = Nothing Then
-            MsgBox("Selecciona una configuración gráfica!", MsgBoxStyle.Exclamation, "#")
-            Return
-        End If
-
-        Dim ruta As String = appdata & "\.minecraft"
-
-        If Directory.Exists(ruta) Then
-            bw_changeperfilgraphic.RunWorkerAsync()
-        Else
-            MsgBox("Ups!, no se encontro tu .minecraft.", MsgBoxStyle.Critical, "#")
-            Return
-        End If
-
-    End Sub
-
-    Private Sub bw_changeperfilgraphic_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_changeperfilgraphic.DoWork
-
-        'delete perfil_graphic.txt
-        File.Delete(program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt")
-
-        'agarra que perfil grafico va a utilizar
-        Dim perfil_graphic As String = ComboBox_perfil_graphic.SelectedItem
-
-        'path install launch-mod
-        Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
-        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
-
-        ' Create or overwrite the file.
-        Dim create_txt As FileStream = File.Create(raiz_txt)
-
-        ' Add text to the file.
-        Dim info As Byte() = New UTF8Encoding(True).GetBytes(perfil_graphic)
-        create_txt.Write(info, 0, info.Length)
-        create_txt.Close()
-
-        'leé perfil-graphic.txt y lo guarda en perfil_graphic_read
-        Dim perfil_graphic_read As String
-        perfil_graphic_read = My.Computer.FileSystem.ReadAllText(raiz & "\perfil-graphic.txt")
-
-        'delete perfil_graphic files
-        File.Delete(appdata & "\.minecraft\launcher_profiles.json")
-        File.Delete(appdata & "\.minecraft\options.txt")
-        File.Delete(appdata & "\.minecraft\perfil.txt")
-        File.Delete(appdata & "\.minecraft\servers.dat")
-
-        'si perfil_graphic_read es  = a alto descarga y pone el alto.zip
-        If (perfil_graphic_read = "alto") Then
-
-            'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
-            Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
-
-            'download perfil_graphic.zip
-            My.Computer.Network.DownloadFile((connection_host & "/alto.zip"), (program_files & "\AmvPrograms\launch-mod\mc\alto.zip"), "", "", True, 2000, True)
-
-            'unzip perfil_graphic.zip
-            ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\alto.zip", appdata & "\.minecraft")
-
-            'delete restos
-            File.Delete(raiz & "\connection.txt")
-            File.Delete(program_files & "\AmvPrograms\launch-mod\mc\alto.zip")
-
-            MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
-
-            'si perfil_graphic_read es  = a normal descarga y pone el normal.zip
-        ElseIf (perfil_graphic_read = "normal") Then
-
-            'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
-            Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
-
-            'download perfil_graphic.zip
-            My.Computer.Network.DownloadFile((connection_host & "/normal.zip"), (program_files & "\AmvPrograms\launch-mod\mc\normal.zip"), "", "", True, 2000, True)
-
-            'unzip perfil_graphic.zip
-            ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\normal.zip", appdata & "\.minecraft")
-
-            'delete restos
-            File.Delete(raiz & "\connection.txt")
-            File.Delete(program_files & "\AmvPrograms\launch-mod\mc\normal.zip")
-
-            MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
-
-            'si perfil_graphic_read es  = a bajo descarga y pone el bajo.zip
-        ElseIf (perfil_graphic_read = "bajo") Then
-
-            'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
-            Dim connection_host As String
-            connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
-
-            'download perfil_graphic.zip
-            My.Computer.Network.DownloadFile((connection_host & "/bajo.zip"), (program_files & "\AmvPrograms\launch-mod\mc\bajo.zip"), "", "", True, 2000, True)
-
-            'unzip perfil_graphic.zip
-            ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\bajo.zip", appdata & "\.minecraft")
-
-            'delete restos
-            File.Delete(raiz & "\connection.txt")
-            File.Delete(program_files & "\AmvPrograms\launch-mod\mc\bajo.zip")
-
-            MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
-
-        Else
-            MsgBox("Ups!, algo no salio bien D:", MsgBoxStyle.Critical, "#")
-            Return
-        End If
-
     End Sub
 
     Private Sub bw_installpg_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_installpg.DoWork
@@ -169,10 +172,10 @@ Public Class frm_perfilg
 
         'path install launch-mod
         Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
-        Dim raiz_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
+        Dim perfil_graphic_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
 
         ' Create or overwrite the file.
-        Dim create_txt As FileStream = File.Create(raiz_txt)
+        Dim create_txt As FileStream = File.Create(perfil_graphic_txt)
 
         ' Add text to the file.
         Dim info As Byte() = New UTF8Encoding(True).GetBytes(perfil_graphic)
@@ -188,7 +191,7 @@ Public Class frm_perfilg
         If (perfil_graphic_read = "alto") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
             Dim connection_host As String
             connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
 
@@ -208,7 +211,7 @@ Public Class frm_perfilg
         ElseIf (perfil_graphic_read = "normal") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
             Dim connection_host As String
             connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
 
@@ -228,7 +231,7 @@ Public Class frm_perfilg
         ElseIf (perfil_graphic_read = "bajo") Then
 
             'connection_host = perfiles graficos link download
-            My.Computer.Network.DownloadFile((host_update), (raiz & "\connection.txt"), "", "", False, 2000, True)
+            My.Computer.Network.DownloadFile((host_perfil_graphic), (raiz & "\connection.txt"), "", "", False, 2000, True)
             Dim connection_host As String
             connection_host = My.Computer.FileSystem.ReadAllText(raiz & "\connection.txt")
 
