@@ -4,7 +4,10 @@ Public Class Form1
 
     Dim version_compare As String = "https://pastebin.com/raw/Bmqb5CQA"
     Dim downland_update_launcher As String = "https://pastebin.com/raw/wa9an0tu"
+    'path program files
     Dim program_files As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)
+    'path roaming 
+    Dim appdata As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -29,22 +32,54 @@ Public Class Form1
     Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
 
         'comprobación de requerimientos para abrir el launcher mc
+        Dim dirminecraftmods As String = appdata & "\.minecraft\mods"
         Dim launchermc_txt As String = program_files & "\AmvPrograms\launch-mod\launcher-mc.txt"
+        Dim pg_txt As String = program_files & "\AmvPrograms\launch-mod\perfil-graphic.txt"
 
-        If File.Exists(launchermc_txt) Then
+        If Directory.Exists(dirminecraftmods) Then
 
-            bw_openlaunchermc.RunWorkerAsync()
+            If File.Exists(launchermc_txt) Then
+
+                If File.Exists(pg_txt) Then
+
+                    bw_openlaunchermc.RunWorkerAsync()
+                Else
+
+                    Dim launchermc_true As String
+                    launchermc_true = MsgBox("¡No haz seleccionado un perfil gráfico!." & vbNewLine & "¿Quieres ir a seleccionar uno?", vbYesNo)
+
+                    If (launchermc_true = vbYes) Then
+
+                        'open form frm_configm
+                        frm_configm.ShowDialog()
+                    End If
+                End If
+            Else
+
+                Dim launchermc_true As String
+                launchermc_true = MsgBox("¡No haz seleccionado con qué tipo de launcher ejecutar el juego!." & vbNewLine & "¿Quieres ir a seleccionar uno?", vbYesNo)
+
+                If (launchermc_true = vbYes) Then
+
+                    'open form frm_configm
+                    frm_configm.ShowDialog()
+                End If
+
+            End If
         Else
 
+            'MsgBox("Ups!, no se encontraron mods instalados.", MsgBoxStyle.Critical, "#")
             Dim launchermc_true As String
-            launchermc_true = MsgBox("¡No has seleccionado con qué tipo de launcher ejecutar el juego!." & vbNewLine & "¿Quieres ir a seleccionar uno?", vbYesNo)
+            launchermc_true = MsgBox("Ups!, no se encontraron mods instalados." & vbNewLine & "¿Quieres ir a instalarlos?", vbYesNo)
 
             If (launchermc_true = vbYes) Then
 
                 'open form frm_configm
                 frm_configm.ShowDialog()
+
             End If
         End If
+
     End Sub
 
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click

@@ -242,13 +242,13 @@ Public Class frm_mods
                 MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
 
             Else
-                MsgBox("Ups!, algo no salio bien D:", MsgBoxStyle.Critical, "#")
+                MsgBox("Ups!, algo no salió bien D:", MsgBoxStyle.Critical, "#")
                 Return
             End If
 
         Else
 
-                MsgBox("Listo, pack de mods instalado, recuerda volver a seleccionar tu perfil gráfico :D!", MsgBoxStyle.Information, "#")
+            MsgBox("Listo, pack de mods instalado, recuerda volver a seleccionar tu perfil gráfico :D!", MsgBoxStyle.Information, "#")
         End If
 
         Dim launchermc_txt As String = program_files & "\AmvPrograms\launch-mod\launcher-mc.txt"
@@ -298,7 +298,7 @@ Public Class frm_mods
                 MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
             Else
 
-                MsgBox("Ups!, algo no salio bien D:", MsgBoxStyle.Exclamation, "#")
+                MsgBox("Ups!, algo no salió bien D:", MsgBoxStyle.Exclamation, "#")
             End If
         Else
 

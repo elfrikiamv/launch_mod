@@ -137,7 +137,7 @@ Public Class frm_launchermc
             MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
         Else
 
-            MsgBox("Ups!, algo no salio bien D:", MsgBoxStyle.Exclamation, "#")
+            MsgBox("Ups!, algo no salió bien D:", MsgBoxStyle.Exclamation, "#")
         End If
     End Sub
 End Class

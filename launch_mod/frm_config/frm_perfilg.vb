@@ -248,7 +248,7 @@ Public Class frm_perfilg
             MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
 
         Else
-            MsgBox("Ups!, algo no salio bien D:", MsgBoxStyle.Critical, "#")
+            MsgBox("Ups!, algo no salió bien D:", MsgBoxStyle.Critical, "#")
             Return
         End If
 
