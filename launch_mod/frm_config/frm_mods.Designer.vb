@@ -31,7 +31,6 @@ Partial Class frm_mods_beta
         Me.bw_installmods = New System.ComponentModel.BackgroundWorker()
         Me.bw_updatemods = New System.ComponentModel.BackgroundWorker()
         Me.bw_reinstallmods = New System.ComponentModel.BackgroundWorker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label_info_update_mods
@@ -123,22 +122,12 @@ Partial Class frm_mods_beta
         Me.bw_reinstallmods.WorkerReportsProgress = True
         Me.bw_reinstallmods.WorkerSupportsCancellation = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(122, 12)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(255, 83)
-        Me.TextBox1.TabIndex = 18
-        '
         'frm_mods_beta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(487, 450)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label_info_update_mods)
         Me.Controls.Add(Me.btn_install_mod_pack)
         Me.Controls.Add(Me.btn_update_mod_pack)
@@ -161,5 +150,4 @@ Partial Class frm_mods_beta
     Friend WithEvents bw_installmods As System.ComponentModel.BackgroundWorker
     Friend WithEvents bw_updatemods As System.ComponentModel.BackgroundWorker
     Friend WithEvents bw_reinstallmods As System.ComponentModel.BackgroundWorker
-    Friend WithEvents TextBox1 As TextBox
 End Class

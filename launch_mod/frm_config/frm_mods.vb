@@ -92,64 +92,37 @@ Public Class frm_mods_beta
     Private Sub bw_installmods_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bw_installmods.DoWork
 
         'download mod pack alternative 2, read line to line
-        Dim connection_mods_txt As System.IO.StreamReader
-        connection_mods_txt = File.OpenText("C:\Users\friki\Desktop\connection-mods\connection-mods.txt")
+        'Dim connection_mods_txt As System.IO.StreamReader
+        'connection_mods_txt = File.OpenText("C:\Users\friki\Desktop\connection-mods\connection-mods.txt")
 
-        Do Until connection_mods_txt.EndOfStream
+        'Do Until connection_mods_txt.EndOfStream
 
-            'TextBox1.Text = TextBox1.Text & connection_mods_txt.ReadLine & vbCrLf
-            'download sure.zip
-            My.Computer.Network.DownloadFile((connection_mods_txt.ReadLine), (program_files & "\AmvPrograms\launch-mod\mc\asd.jar"), "", "", True, 2000, True)
-        Loop
-
-        connection_mods_txt.Close()
-
-        'Dim FILE_NAME As String = "C:UsersOwnerDocumentsTest.txt"
-        'Dim TextLine As String
-
-        'If System.IO.File.Exists(FILE_NAME) = True Then
-
-        '    Dim objReader As New System.IO.StreamReader(FILE_NAME)
-
-        '    Dim v As Integer = objReader.Peek()
-
-        '    Do While v - 1
-
-        '        TextLine = TextLine & objReader.ReadLine() & vbNewLine
-        '    Loop
-
-        '    TextBox1.Text = TextLine
-        'Else
-        '    MessageBox.Show("El archivo no existe")
-        'End If
-
-        'Dim TextLine2 As String
-
-        'Do While objReader.Peek(); -1
-
-        '    TextLine2 = TextLine & amp; objReader. ReadLine () &amp; vbNewLine
-
+        '    'TextBox1.Text = TextBox1.Text & connection_mods_txt.ReadLine & vbCrLf
+        '    'download sure.zip
+        '    My.Computer.Network.DownloadFile((connection_mods_txt.ReadLine), (program_files & "\AmvPrograms\launch-mod\mc\asd.jar"), "", "", True, 2000, True)
         'Loop
 
-        ''path install launch-mod
-        'Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
+        'connection_mods_txt.Close()
 
-        ''connection_sure = sure.zip link download
-        'My.Computer.Network.DownloadFile((host_sure), (raiz & "\connection-sure.txt"), "", "", False, 2000, True)
-        'Dim connection_sure As String
-        'connection_sure = My.Computer.FileSystem.ReadAllText(raiz & "\connection-sure.txt")
+        'path install launch-mod
+        Dim raiz As String = program_files & "\AmvPrograms\launch-mod"
 
-        ''download sure.zip
-        'My.Computer.Network.DownloadFile((connection_sure), (program_files & "\AmvPrograms\launch-mod\mc\sure.zip"), "", "", True, 2000, True)
+        'connection_sure = sure.zip link download
+        My.Computer.Network.DownloadFile((host_sure), (raiz & "\connection-sure.txt"), "", "", False, 2000, True)
+        Dim connection_sure As String
+        connection_sure = My.Computer.FileSystem.ReadAllText(raiz & "\connection-sure.txt")
 
-        ''unzip sure.zip
-        'ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\sure.zip", appdata & "\")
+        'download sure.zip
+        My.Computer.Network.DownloadFile((connection_sure), (program_files & "\AmvPrograms\launch-mod\mc\sure.zip"), "", "", True, 2000, True)
 
-        ''delete restos
-        'File.Delete(raiz & "\connection-sure.txt")
-        'File.Delete(program_files & "\AmvPrograms\launch-mod\mc\sure.zip")
+        'unzip sure.zip
+        ZipFile.ExtractToDirectory(program_files & "\AmvPrograms\launch-mod\mc\sure.zip", appdata & "\")
 
-        'MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
+        'delete restos
+        File.Delete(raiz & "\connection-sure.txt")
+        File.Delete(program_files & "\AmvPrograms\launch-mod\mc\sure.zip")
+
+        MsgBox("Listo, dale (ok) para continuar!", MsgBoxStyle.Information, "#")
 
     End Sub
 
