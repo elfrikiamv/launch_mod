@@ -67,6 +67,7 @@ Partial Class frm_info
         Me.Controls.Add(Me.btn_update)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frm_info"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -19,17 +19,18 @@ Public Class Form1
         Else
             bw_checkupdate.RunWorkerAsync()
         End If
+    End Sub
+    Private Sub btnamv_play_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_play.MouseEnter
 
+        btnamv_play.BackColor = Color.FromArgb(139, 148, 158)
     End Sub
 
-    Private Sub btn_config_Click(sender As Object, e As EventArgs) Handles btn_config.Click
+    Private Sub btnamv_play_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_play.MouseLeave
 
-        'open form frm_configm
-        frm_configm.ShowDialog()
-
+        btnamv_play.BackColor = Color.Transparent
     End Sub
 
-    Private Sub btn_play_Click(sender As Object, e As EventArgs) Handles btn_play.Click
+    Private Sub btnamv_play_Click(sender As Object, e As EventArgs) Handles btnamv_play.Click
 
         'comprobación de requerimientos para abrir el launcher mc
         Dim dirminecraftmods As String = appdata & "\.minecraft\mods"
@@ -81,11 +82,34 @@ Public Class Form1
         End If
 
     End Sub
+    Private Sub btnamv_info_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_info.MouseEnter
 
-    Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
+        btnamv_info.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_info_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_info.MouseLeave
+
+        btnamv_info.BackColor = Color.Transparent
+    End Sub
+    Private Sub btnamv_info_Click(sender As Object, e As EventArgs) Handles btnamv_info.Click
 
         'open form frm_info
         frm_info.ShowDialog()
+
+    End Sub
+    Private Sub btnamv_config_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_config.MouseEnter
+
+        btnamv_config.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_config_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_config.MouseLeave
+
+        btnamv_config.BackColor = Color.Transparent
+    End Sub
+    Private Sub btnamv_config_Click(sender As Object, e As EventArgs) Handles btnamv_config.Click
+
+        'open form frm_configm
+        frm_configm.ShowDialog()
 
     End Sub
 
