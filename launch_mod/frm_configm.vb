@@ -35,7 +35,7 @@
     Private Sub btn_packmods_Click(sender As Object, e As EventArgs) Handles btn_packmods.Click
 
         'invocamos al metodo AbrirFormEnPanel
-        AbrirFormEnPanel(Of frm_mods)()
+        AbrirFormEnPanel(Of frm_mods_beta)()
 
         'change bgcolor of btn
         'btn_packmods.BackColor = Color.FromArgb(12, 61, 92)
