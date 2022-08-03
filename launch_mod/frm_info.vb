@@ -11,7 +11,17 @@ Public Class frm_info
 
     End Sub
 
-    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+    Private Sub btnamv_update_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_update.MouseEnter
+
+        btnamv_update.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_update_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_update.MouseLeave
+
+        btnamv_update.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_update_Click(sender As Object, e As EventArgs) Handles btnamv_update.Click
 
         'comprobación de requerimientos para checar actualización de lanch_mod
         If My.Computer.Network.IsAvailable = False Then
@@ -60,4 +70,5 @@ Public Class frm_info
         File.Delete(raiz & "\version-validation.txt")
         File.Delete(raiz & "\update-launcher.txt")
     End Sub
+
 End Class
