@@ -18,7 +18,17 @@ Public Class frm_launchermc
 
     End Sub
 
-    Private Sub btn_savelaunchermc_Click(sender As Object, e As EventArgs) Handles btn_savelaunchermc.Click
+    Private Sub btnamv_savelaunchermc_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_savelaunchermc.MouseEnter
+
+        btnamv_savelaunchermc.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_savelaunchermc_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_savelaunchermc.MouseLeave
+
+        btnamv_savelaunchermc.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_savelaunchermc_Click(sender As Object, e As EventArgs) Handles btnamv_savelaunchermc.Click
 
         'comprobación de requerimientos para abrir el launcher mc
         If ComboBox_select_launcher.SelectedItem = Nothing Then
@@ -140,4 +150,5 @@ Public Class frm_launchermc
             MsgBox("Ups!, algo no salió bien D:", MsgBoxStyle.Exclamation, "#")
         End If
     End Sub
+
 End Class

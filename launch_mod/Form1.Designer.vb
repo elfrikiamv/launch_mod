@@ -25,9 +25,9 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.bw_checkupdate = New System.ComponentModel.BackgroundWorker()
         Me.bw_openlaunchermc = New System.ComponentModel.BackgroundWorker()
-        Me.btnamv_play = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_info = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_config = New launch_mod.CustomControls.AmvControls.AmvButton()
+        Me.btnamv_play = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.SuspendLayout()
         '
         'bw_checkupdate
@@ -39,27 +39,6 @@ Partial Class Form1
         '
         Me.bw_openlaunchermc.WorkerReportsProgress = True
         Me.bw_openlaunchermc.WorkerSupportsCancellation = True
-        '
-        'btnamv_play
-        '
-        Me.btnamv_play.BackColor = System.Drawing.Color.Transparent
-        Me.btnamv_play.BackgroundColor = System.Drawing.Color.Transparent
-        Me.btnamv_play.BorderColor = System.Drawing.Color.White
-        Me.btnamv_play.BorderRadius = 22
-        Me.btnamv_play.BorderSize = 1
-        Me.btnamv_play.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnamv_play.FlatAppearance.BorderSize = 0
-        Me.btnamv_play.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnamv_play.Font = New System.Drawing.Font("Caviar Dreams", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnamv_play.ForeColor = System.Drawing.Color.White
-        Me.btnamv_play.Location = New System.Drawing.Point(424, 388)
-        Me.btnamv_play.Name = "btnamv_play"
-        Me.btnamv_play.Size = New System.Drawing.Size(171, 45)
-        Me.btnamv_play.TabIndex = 4
-        Me.btnamv_play.Text = "Play"
-        Me.btnamv_play.TextColor = System.Drawing.Color.White
-        Me.btnamv_play.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnamv_play.UseVisualStyleBackColor = False
         '
         'btnamv_info
         '
@@ -73,7 +52,7 @@ Partial Class Form1
         Me.btnamv_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnamv_info.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnamv_info.ForeColor = System.Drawing.Color.White
-        Me.btnamv_info.Location = New System.Drawing.Point(230, 388)
+        Me.btnamv_info.Location = New System.Drawing.Point(213, 388)
         Me.btnamv_info.Name = "btnamv_info"
         Me.btnamv_info.Size = New System.Drawing.Size(171, 45)
         Me.btnamv_info.TabIndex = 5
@@ -94,7 +73,7 @@ Partial Class Form1
         Me.btnamv_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnamv_config.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnamv_config.ForeColor = System.Drawing.Color.White
-        Me.btnamv_config.Location = New System.Drawing.Point(610, 388)
+        Me.btnamv_config.Location = New System.Drawing.Point(607, 388)
         Me.btnamv_config.Name = "btnamv_config"
         Me.btnamv_config.Size = New System.Drawing.Size(171, 45)
         Me.btnamv_config.TabIndex = 6
@@ -103,13 +82,35 @@ Partial Class Form1
         Me.btnamv_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnamv_config.UseVisualStyleBackColor = False
         '
+        'btnamv_play
+        '
+        Me.btnamv_play.BackColor = System.Drawing.Color.Transparent
+        Me.btnamv_play.BackgroundColor = System.Drawing.Color.Transparent
+        Me.btnamv_play.BorderColor = System.Drawing.Color.White
+        Me.btnamv_play.BorderRadius = 22
+        Me.btnamv_play.BorderSize = 1
+        Me.btnamv_play.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnamv_play.FlatAppearance.BorderSize = 0
+        Me.btnamv_play.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnamv_play.Font = New System.Drawing.Font("Caviar Dreams", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnamv_play.ForeColor = System.Drawing.Color.White
+        Me.btnamv_play.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnamv_play.Location = New System.Drawing.Point(409, 388)
+        Me.btnamv_play.Name = "btnamv_play"
+        Me.btnamv_play.Size = New System.Drawing.Size(171, 45)
+        Me.btnamv_play.TabIndex = 4
+        Me.btnamv_play.Text = "Play"
+        Me.btnamv_play.TextColor = System.Drawing.Color.White
+        Me.btnamv_play.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnamv_play.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(973, 470)
+        Me.ClientSize = New System.Drawing.Size(984, 461)
         Me.Controls.Add(Me.btnamv_config)
         Me.Controls.Add(Me.btnamv_info)
         Me.Controls.Add(Me.btnamv_play)
@@ -118,7 +119,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "launch_mod"
+        Me.Text = "launch_mod beta v4.0.0"
         Me.ResumeLayout(False)
 
     End Sub

@@ -24,8 +24,8 @@ Partial Class frm_perfilg
     Private Sub InitializeComponent()
         Me.Label_info_graficos = New System.Windows.Forms.Label()
         Me.ComboBox_perfil_graphic = New System.Windows.Forms.ComboBox()
-        Me.btn_savepg = New System.Windows.Forms.Button()
         Me.bw_installpg = New System.ComponentModel.BackgroundWorker()
+        Me.btnamv_savepg = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.SuspendLayout()
         '
         'Label_info_graficos
@@ -34,7 +34,7 @@ Partial Class frm_perfilg
         Me.Label_info_graficos.BackColor = System.Drawing.Color.Transparent
         Me.Label_info_graficos.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_info_graficos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label_info_graficos.Location = New System.Drawing.Point(12, 168)
+        Me.Label_info_graficos.Location = New System.Drawing.Point(14, 97)
         Me.Label_info_graficos.MaximumSize = New System.Drawing.Size(470, 0)
         Me.Label_info_graficos.Name = "Label_info_graficos"
         Me.Label_info_graficos.Size = New System.Drawing.Size(464, 36)
@@ -45,39 +45,50 @@ Partial Class frm_perfilg
         '
         Me.ComboBox_perfil_graphic.DropDownHeight = 80
         Me.ComboBox_perfil_graphic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox_perfil_graphic.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_perfil_graphic.Font = New System.Drawing.Font("Bw Quinta Pro", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_perfil_graphic.FormattingEnabled = True
         Me.ComboBox_perfil_graphic.IntegralHeight = False
         Me.ComboBox_perfil_graphic.Items.AddRange(New Object() {"alto", "normal", "bajo"})
-        Me.ComboBox_perfil_graphic.Location = New System.Drawing.Point(144, 205)
+        Me.ComboBox_perfil_graphic.Location = New System.Drawing.Point(155, 141)
         Me.ComboBox_perfil_graphic.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.ComboBox_perfil_graphic.Name = "ComboBox_perfil_graphic"
-        Me.ComboBox_perfil_graphic.Size = New System.Drawing.Size(182, 26)
+        Me.ComboBox_perfil_graphic.Size = New System.Drawing.Size(175, 26)
         Me.ComboBox_perfil_graphic.TabIndex = 11
-        '
-        'btn_savepg
-        '
-        Me.btn_savepg.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_savepg.ForeColor = System.Drawing.Color.Black
-        Me.btn_savepg.Location = New System.Drawing.Point(185, 252)
-        Me.btn_savepg.Name = "btn_savepg"
-        Me.btn_savepg.Size = New System.Drawing.Size(114, 28)
-        Me.btn_savepg.TabIndex = 15
-        Me.btn_savepg.Text = "Guardar"
-        Me.btn_savepg.UseVisualStyleBackColor = True
         '
         'bw_installpg
         '
         Me.bw_installpg.WorkerReportsProgress = True
         Me.bw_installpg.WorkerSupportsCancellation = True
         '
+        'btnamv_savepg
+        '
+        Me.btnamv_savepg.BackColor = System.Drawing.Color.Transparent
+        Me.btnamv_savepg.BackgroundColor = System.Drawing.Color.Transparent
+        Me.btnamv_savepg.BorderColor = System.Drawing.Color.White
+        Me.btnamv_savepg.BorderRadius = 22
+        Me.btnamv_savepg.BorderSize = 1
+        Me.btnamv_savepg.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnamv_savepg.FlatAppearance.BorderSize = 0
+        Me.btnamv_savepg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnamv_savepg.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnamv_savepg.ForeColor = System.Drawing.Color.White
+        Me.btnamv_savepg.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnamv_savepg.Location = New System.Drawing.Point(168, 190)
+        Me.btnamv_savepg.Name = "btnamv_savepg"
+        Me.btnamv_savepg.Size = New System.Drawing.Size(147, 42)
+        Me.btnamv_savepg.TabIndex = 16
+        Me.btnamv_savepg.Text = "Guardar"
+        Me.btnamv_savepg.TextColor = System.Drawing.Color.White
+        Me.btnamv_savepg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnamv_savepg.UseVisualStyleBackColor = False
+        '
         'frm_perfilg
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(484, 450)
-        Me.Controls.Add(Me.btn_savepg)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(487, 306)
+        Me.Controls.Add(Me.btnamv_savepg)
         Me.Controls.Add(Me.Label_info_graficos)
         Me.Controls.Add(Me.ComboBox_perfil_graphic)
         Me.Name = "frm_perfilg"
@@ -89,6 +100,6 @@ Partial Class frm_perfilg
 
     Friend WithEvents Label_info_graficos As Label
     Friend WithEvents ComboBox_perfil_graphic As ComboBox
-    Friend WithEvents btn_savepg As Button
     Friend WithEvents bw_installpg As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnamv_savepg As CustomControls.AmvControls.AmvButton
 End Class

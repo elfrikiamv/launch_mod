@@ -32,24 +32,51 @@
 
     End Sub
 
-    Private Sub btn_packmods_Click(sender As Object, e As EventArgs) Handles btn_packmods.Click
+    Private Sub btnamv_packmods_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_packmods.MouseEnter
 
-        'invocamos al metodo AbrirFormEnPanel
+        btnamv_packmods.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_packmods_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_packmods.MouseLeave
+
+        btnamv_packmods.BackColor = Color.Transparent
+    End Sub
+    Private Sub btnamv_packmods_Click(sender As Object, e As EventArgs) Handles btnamv_packmods.Click
+
+        'invocamos al metodo frm_mods_beta
         AbrirFormEnPanel(Of frm_mods_beta)()
 
         'change bgcolor of btn
         'btn_packmods.BackColor = Color.FromArgb(12, 61, 92)
     End Sub
 
-    Private Sub btn_configgrafica_Click(sender As Object, e As EventArgs) Handles btn_configgrafica.Click
+    Private Sub btnamv_perfilgraphic_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_perfilgraphic.MouseEnter
 
-        'invocamos al metodo AbrirFormEnPanel
+        btnamv_perfilgraphic.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_perfilgraphic_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_perfilgraphic.MouseLeave
+
+        btnamv_perfilgraphic.BackColor = Color.Transparent
+    End Sub
+    Private Sub btnamv_perfilgraphic_Click(sender As Object, e As EventArgs) Handles btnamv_perfilgraphic.Click
+
+        'invocamos al metodo frm_perfilg
         AbrirFormEnPanel(Of frm_perfilg)()
     End Sub
 
-    Private Sub btn_launchmc_Click(sender As Object, e As EventArgs) Handles btn_launchmc.Click
+    Private Sub btnamv_launchmc_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_launchmc.MouseEnter
 
-        'invocamos al metodo AbrirFormEnPanel
+        btnamv_launchmc.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_launchmc_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_launchmc.MouseLeave
+
+        btnamv_launchmc.BackColor = Color.Transparent
+    End Sub
+    Private Sub btnamv_launchmc_Click(sender As Object, e As EventArgs) Handles btnamv_launchmc.Click
+
+        'invocamos al metodo frm_launchermc
         AbrirFormEnPanel(Of frm_launchermc)()
     End Sub
 End Class

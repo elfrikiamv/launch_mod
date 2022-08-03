@@ -17,7 +17,17 @@ Public Class frm_perfilg
 
     End Sub
 
-    Private Sub btn_savepg_Click(sender As Object, e As EventArgs) Handles btn_savepg.Click
+    Private Sub btnamv_savepg_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_savepg.MouseEnter
+
+        btnamv_savepg.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_savepg_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_savepg.MouseLeave
+
+        btnamv_savepg.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_savepg_Click(sender As Object, e As EventArgs) Handles btnamv_savepg.Click
 
         'comprobación de requerimientos para instalar los mods
         If My.Computer.Network.IsAvailable = False Then
@@ -253,4 +263,5 @@ Public Class frm_perfilg
         End If
 
     End Sub
+
 End Class

@@ -21,35 +21,54 @@ Public Class frm_mods_beta
 
     End Sub
 
-    Private Sub btn_install_mod_pack_Click(sender As Object, e As EventArgs) Handles btn_install_mod_pack.Click
+    Private Sub btnamv_install_mod_pack_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_install_mod_pack.MouseEnter
+
+        btnamv_install_mod_pack.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_install_mod_pack_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_install_mod_pack.MouseLeave
+
+        btnamv_install_mod_pack.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_install_mod_pack_Click(sender As Object, e As EventArgs) Handles btnamv_install_mod_pack.Click
 
         'comprobación de requerimientos para instalar los mods
         If My.Computer.Network.IsAvailable = False Then
             MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
         End If
         bw_installmods.RunWorkerAsync()
-        'Dim dirminecraft As String = appdata & "\.minecraft"
+        Dim dirminecraft As String = appdata & "\.minecraft"
 
-        'If Directory.Exists(dirminecraft) Then
+        If Directory.Exists(dirminecraft) Then
 
-        '    Dim dirminecraft_true As String
-        '    dirminecraft_true = MsgBox("¡Ya tienes una carpeta .minecraft!" & vbNewLine & "¿Quieres borrarla para continuar?", vbYesNo)
+            Dim dirminecraft_true As String
+            dirminecraft_true = MsgBox("¡Ya tienes una carpeta .minecraft!" & vbNewLine & "¿Quieres borrarla para continuar?", vbYesNo)
 
-        '    If (dirminecraft_true = vbYes) Then
+            If (dirminecraft_true = vbYes) Then
 
-        '        'delete .minecraft
-        '        Directory.Delete(appdata & "\.minecraft", True)
+                'delete .minecraft
+                Directory.Delete(appdata & "\.minecraft", True)
 
-        '        bw_installmods.RunWorkerAsync()
-        '    End If
-        'Else
+                bw_installmods.RunWorkerAsync()
+            End If
+        Else
 
-        '    bw_installmods.RunWorkerAsync()
-        'End If
-
+            bw_installmods.RunWorkerAsync()
+        End If
     End Sub
 
-    Private Sub btn_reinstall_mod_pack_Click(sender As Object, e As EventArgs) Handles btn_reinstall_mod_pack.Click
+    Private Sub btnamv_reinstall_mod_pack_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_reinstall_mod_pack.MouseEnter
+
+        btnamv_reinstall_mod_pack.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_reinstall_mod_pack_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_reinstall_mod_pack.MouseLeave
+
+        btnamv_reinstall_mod_pack.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_reinstall_mod_pack_Click(sender As Object, e As EventArgs) Handles btnamv_reinstall_mod_pack.Click
 
         'comprobación de requerimientos para reinstalar los mods
         If My.Computer.Network.IsAvailable = False Then
@@ -69,7 +88,17 @@ Public Class frm_mods_beta
 
     End Sub
 
-    Private Sub btn_update_mod_pack_Click(sender As Object, e As EventArgs) Handles btn_update_mod_pack.Click
+    Private Sub btnamv_update_mod_pack_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_update_mod_pack.MouseEnter
+
+        btnamv_update_mod_pack.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_update_mod_pack_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_update_mod_pack.MouseLeave
+
+        btnamv_update_mod_pack.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_update_mod_pack_Click(sender As Object, e As EventArgs) Handles btnamv_update_mod_pack.Click
 
         'comprobación de requerimientos para actualizar los mods
         If My.Computer.Network.IsAvailable = False Then
@@ -319,4 +348,5 @@ Public Class frm_mods_beta
         End If
 
     End Sub
+
 End Class
