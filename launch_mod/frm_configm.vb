@@ -1,6 +1,8 @@
 ﻿Public Class frm_configm
     Private Sub frm_configm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'invocamos al metodo frm_mods_beta
+        AbrirFormEnPanel(Of frm_manual)()
     End Sub
 
     Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
@@ -78,5 +80,21 @@
 
         'invocamos al metodo frm_launchermc
         AbrirFormEnPanel(Of frm_launchermc)()
+    End Sub
+
+    Private Sub btnamv_manual_MouseEnter(sender As Object, e As EventArgs) Handles btnamv_manual.MouseEnter
+
+        btnamv_manual.BackColor = Color.FromArgb(139, 148, 158)
+    End Sub
+
+    Private Sub btnamv_manual_MouseLeave(sender As Object, e As EventArgs) Handles btnamv_manual.MouseLeave
+
+        btnamv_manual.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnamv_manual_Click(sender As Object, e As EventArgs) Handles btnamv_manual.Click
+
+        'invocamos al metodo frm_launchermc
+        AbrirFormEnPanel(Of frm_manual)()
     End Sub
 End Class

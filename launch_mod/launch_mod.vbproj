@@ -116,6 +116,12 @@
     <Compile Include="frm_config\frm_launchermc.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_config\frm_manual.designer.vb">
+      <DependentUpon>frm_manual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_config\frm_manual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_config\frm_mods.Designer.vb">
       <DependentUpon>frm_mods.vb</DependentUpon>
     </Compile>
@@ -128,7 +134,7 @@
     <Compile Include="frm_config\frm_perfilg.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_info.Designer.vb">
+    <Compile Include="frm_info.designer.vb">
       <DependentUpon>frm_info.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_info.vb">
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_config\frm_launchermc.resx">
       <DependentUpon>frm_launchermc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_config\frm_manual.resx">
+      <DependentUpon>frm_manual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_config\frm_mods.resx">
       <DependentUpon>frm_mods.vb</DependentUpon>

@@ -24,6 +24,7 @@ Partial Class frm_configm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_configm))
         Me.pnl_containerbtn = New System.Windows.Forms.Panel()
+        Me.btnamv_manual = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_launchmc = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_perfilgraphic = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_packmods = New launch_mod.CustomControls.AmvControls.AmvButton()
@@ -34,6 +35,7 @@ Partial Class frm_configm
         'pnl_containerbtn
         '
         Me.pnl_containerbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.pnl_containerbtn.Controls.Add(Me.btnamv_manual)
         Me.pnl_containerbtn.Controls.Add(Me.btnamv_launchmc)
         Me.pnl_containerbtn.Controls.Add(Me.btnamv_perfilgraphic)
         Me.pnl_containerbtn.Controls.Add(Me.btnamv_packmods)
@@ -42,6 +44,28 @@ Partial Class frm_configm
         Me.pnl_containerbtn.Name = "pnl_containerbtn"
         Me.pnl_containerbtn.Size = New System.Drawing.Size(142, 300)
         Me.pnl_containerbtn.TabIndex = 0
+        '
+        'btnamv_manual
+        '
+        Me.btnamv_manual.BackColor = System.Drawing.Color.Transparent
+        Me.btnamv_manual.BackgroundColor = System.Drawing.Color.Transparent
+        Me.btnamv_manual.BorderColor = System.Drawing.Color.White
+        Me.btnamv_manual.BorderRadius = 0
+        Me.btnamv_manual.BorderSize = 0
+        Me.btnamv_manual.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnamv_manual.FlatAppearance.BorderSize = 0
+        Me.btnamv_manual.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnamv_manual.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnamv_manual.ForeColor = System.Drawing.Color.White
+        Me.btnamv_manual.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnamv_manual.Location = New System.Drawing.Point(0, 13)
+        Me.btnamv_manual.Name = "btnamv_manual"
+        Me.btnamv_manual.Size = New System.Drawing.Size(142, 49)
+        Me.btnamv_manual.TabIndex = 8
+        Me.btnamv_manual.Text = "Instrucciones"
+        Me.btnamv_manual.TextColor = System.Drawing.Color.White
+        Me.btnamv_manual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnamv_manual.UseVisualStyleBackColor = False
         '
         'btnamv_launchmc
         '
@@ -143,4 +167,5 @@ Partial Class frm_configm
     Friend WithEvents btnamv_packmods As CustomControls.AmvControls.AmvButton
     Friend WithEvents btnamv_launchmc As CustomControls.AmvControls.AmvButton
     Friend WithEvents btnamv_perfilgraphic As CustomControls.AmvControls.AmvButton
+    Friend WithEvents btnamv_manual As CustomControls.AmvControls.AmvButton
 End Class
