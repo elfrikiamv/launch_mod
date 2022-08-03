@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4643377A6C464D0FA125BFBE5F493920"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_47AC69C8B7AC4F2DBBD5637AA196AA36"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -45,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7F55A49D127B4EE482EC5C07DB23D512"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_89895F99E78D6A4CC4BA4BB8EFF64764"
         "OwnerKey" = "8:_A33EB43E06422DBBC469888FA6FDD1C2"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,13 +52,19 @@
         "Entry"
         {
         "MsmKey" = "8:_A33EB43E06422DBBC469888FA6FDD1C2"
-        "OwnerKey" = "8:_4643377A6C464D0FA125BFBE5F493920"
+        "OwnerKey" = "8:_7F55A49D127B4EE482EC5C07DB23D512"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_68733DD0113E2CD5E93EB2580F4543BB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7F55A49D127B4EE482EC5C07DB23D512"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_47AC69C8B7AC4F2DBBD5637AA196AA36"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4643377A6C464D0FA125BFBE5F493920"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -200,37 +200,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4643377A6C464D0FA125BFBE5F493920"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:launch_mod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4643377A6C464D0FA125BFBE5F493920"
-                    {
-                    "Name" = "8:launch_mod.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\launch_mod\\bin\\Release\\Ofuscados\\launch_mod.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_431F795FF698433A972A8689D4CE164B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_47AC69C8B7AC4F2DBBD5637AA196AA36"
             {
             "AssemblyRegister" = "3:1"
@@ -311,6 +280,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F55A49D127B4EE482EC5C07DB23D512"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:launch_mod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7F55A49D127B4EE482EC5C07DB23D512"
+                    {
+                    "Name" = "8:launch_mod.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\launch_mod\\bin\\Release\\Ofuscados\\launch_mod.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_431F795FF698433A972A8689D4CE164B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_89895F99E78D6A4CC4BA4BB8EFF64764"
@@ -563,7 +563,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2277AFC1CDDC44F992AD8C1A6C9990B7"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3E960780B8FA4E3089E865F9F8C4EA42"
             {
             "Name" = "8:launch_mod"
             "Arguments" = "8:"
@@ -571,13 +571,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_4643377A6C464D0FA125BFBE5F493920"
+            "Target" = "8:_7F55A49D127B4EE482EC5C07DB23D512"
             "Folder" = "8:_C08F1ACFE0A94D03BDB3F1C436414057"
             "WorkingFolder" = "8:_431F795FF698433A972A8689D4CE164B"
             "Icon" = "8:_64786E6E9F814F3D827692C9E3242271"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E7026A09954F4D76BE58900F5FF50003"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5F4439A8179B4AF49E12A995742D173B"
             {
             "Name" = "8:launch_mod"
             "Arguments" = "8:"
@@ -585,7 +585,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_4643377A6C464D0FA125BFBE5F493920"
+            "Target" = "8:_7F55A49D127B4EE482EC5C07DB23D512"
             "Folder" = "8:_68C7A5D7081D449BA079E35FF84819AD"
             "WorkingFolder" = "8:_431F795FF698433A972A8689D4CE164B"
             "Icon" = "8:_64786E6E9F814F3D827692C9E3242271"

@@ -27,7 +27,7 @@ Partial Class frm_info
         Me.bw_updatelauncher = New System.ComponentModel.BackgroundWorker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lnklb_github = New System.Windows.Forms.LinkLabel()
         Me.btnamv_update = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.SuspendLayout()
         '
@@ -71,18 +71,18 @@ Partial Class frm_info
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Versión: beta 4.0.0"
         '
-        'LinkLabel1
+        'lnklb_github
         '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Caviar Dreams", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.LinkLabel1.Location = New System.Drawing.Point(280, 171)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(68, 22)
-        Me.LinkLabel1.TabIndex = 17
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Github"
+        Me.lnklb_github.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.lnklb_github.AutoSize = True
+        Me.lnklb_github.Font = New System.Drawing.Font("Caviar Dreams", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnklb_github.LinkColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.lnklb_github.Location = New System.Drawing.Point(280, 171)
+        Me.lnklb_github.Name = "lnklb_github"
+        Me.lnklb_github.Size = New System.Drawing.Size(68, 22)
+        Me.lnklb_github.TabIndex = 17
+        Me.lnklb_github.TabStop = True
+        Me.lnklb_github.Text = "Github"
         '
         'btnamv_update
         '
@@ -113,7 +113,7 @@ Partial Class frm_info
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(626, 300)
         Me.Controls.Add(Me.btnamv_update)
-        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.lnklb_github)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -133,6 +133,6 @@ Partial Class frm_info
     Friend WithEvents bw_updatelauncher As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents lnklb_github As LinkLabel
     Friend WithEvents btnamv_update As CustomControls.AmvControls.AmvButton
 End Class

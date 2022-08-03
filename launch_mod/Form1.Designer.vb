@@ -25,8 +25,10 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.bw_checkupdate = New System.ComponentModel.BackgroundWorker()
         Me.bw_openlaunchermc = New System.ComponentModel.BackgroundWorker()
-        Me.btnamv_info = New launch_mod.CustomControls.AmvControls.AmvButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.gb_new_updates = New System.Windows.Forms.GroupBox()
         Me.btnamv_config = New launch_mod.CustomControls.AmvControls.AmvButton()
+        Me.btnamv_info = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_play = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.SuspendLayout()
         '
@@ -40,26 +42,28 @@ Partial Class Form1
         Me.bw_openlaunchermc.WorkerReportsProgress = True
         Me.bw_openlaunchermc.WorkerSupportsCancellation = True
         '
-        'btnamv_info
+        'Label2
         '
-        Me.btnamv_info.BackColor = System.Drawing.Color.Transparent
-        Me.btnamv_info.BackgroundColor = System.Drawing.Color.Transparent
-        Me.btnamv_info.BorderColor = System.Drawing.Color.White
-        Me.btnamv_info.BorderRadius = 22
-        Me.btnamv_info.BorderSize = 1
-        Me.btnamv_info.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnamv_info.FlatAppearance.BorderSize = 0
-        Me.btnamv_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnamv_info.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnamv_info.ForeColor = System.Drawing.Color.White
-        Me.btnamv_info.Location = New System.Drawing.Point(213, 388)
-        Me.btnamv_info.Name = "btnamv_info"
-        Me.btnamv_info.Size = New System.Drawing.Size(171, 45)
-        Me.btnamv_info.TabIndex = 5
-        Me.btnamv_info.Text = "Información"
-        Me.btnamv_info.TextColor = System.Drawing.Color.White
-        Me.btnamv_info.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnamv_info.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Brownhill Script", 66.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(98, 157)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(297, 92)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "launch_mod"
+        '
+        'gb_new_updates
+        '
+        Me.gb_new_updates.BackColor = System.Drawing.Color.Transparent
+        Me.gb_new_updates.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_new_updates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.gb_new_updates.Location = New System.Drawing.Point(432, 64)
+        Me.gb_new_updates.Name = "gb_new_updates"
+        Me.gb_new_updates.Size = New System.Drawing.Size(458, 270)
+        Me.gb_new_updates.TabIndex = 17
+        Me.gb_new_updates.TabStop = False
+        Me.gb_new_updates.Text = "Noticias y actualizaciones!"
         '
         'btnamv_config
         '
@@ -81,6 +85,27 @@ Partial Class Form1
         Me.btnamv_config.TextColor = System.Drawing.Color.White
         Me.btnamv_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnamv_config.UseVisualStyleBackColor = False
+        '
+        'btnamv_info
+        '
+        Me.btnamv_info.BackColor = System.Drawing.Color.Transparent
+        Me.btnamv_info.BackgroundColor = System.Drawing.Color.Transparent
+        Me.btnamv_info.BorderColor = System.Drawing.Color.White
+        Me.btnamv_info.BorderRadius = 22
+        Me.btnamv_info.BorderSize = 1
+        Me.btnamv_info.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnamv_info.FlatAppearance.BorderSize = 0
+        Me.btnamv_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnamv_info.Font = New System.Drawing.Font("Caviar Dreams", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnamv_info.ForeColor = System.Drawing.Color.White
+        Me.btnamv_info.Location = New System.Drawing.Point(213, 388)
+        Me.btnamv_info.Name = "btnamv_info"
+        Me.btnamv_info.Size = New System.Drawing.Size(171, 45)
+        Me.btnamv_info.TabIndex = 5
+        Me.btnamv_info.Text = "Información"
+        Me.btnamv_info.TextColor = System.Drawing.Color.White
+        Me.btnamv_info.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnamv_info.UseVisualStyleBackColor = False
         '
         'btnamv_play
         '
@@ -111,6 +136,8 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(984, 461)
+        Me.Controls.Add(Me.gb_new_updates)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnamv_config)
         Me.Controls.Add(Me.btnamv_info)
         Me.Controls.Add(Me.btnamv_play)
@@ -121,6 +148,7 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "launch_mod beta v4.0.0"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents bw_checkupdate As System.ComponentModel.BackgroundWorker
@@ -128,4 +156,6 @@ Partial Class Form1
     Friend WithEvents btnamv_play As CustomControls.AmvControls.AmvButton
     Friend WithEvents btnamv_info As CustomControls.AmvControls.AmvButton
     Friend WithEvents btnamv_config As CustomControls.AmvControls.AmvButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents gb_new_updates As GroupBox
 End Class

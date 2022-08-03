@@ -71,4 +71,9 @@ Public Class frm_info
         File.Delete(raiz & "\update-launcher.txt")
     End Sub
 
+    Private Sub lnklb_github_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklb_github.LinkClicked
+
+        'lnklb_github.LinkVisited = True
+        System.Diagnostics.Process.Start("https://github.com/elfrikiamv")
+    End Sub
 End Class

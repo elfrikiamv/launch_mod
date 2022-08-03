@@ -37,7 +37,7 @@ Public Class frm_mods_beta
         If My.Computer.Network.IsAvailable = False Then
             MsgBox("Necesitas conexión a Internet!", MsgBoxStyle.Critical, "#")
         End If
-        bw_installmods.RunWorkerAsync()
+
         Dim dirminecraft As String = appdata & "\.minecraft"
 
         If Directory.Exists(dirminecraft) Then
