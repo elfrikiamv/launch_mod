@@ -185,10 +185,12 @@ Public Class Form1
         'launcher.FileChanged += Launcher_FileChanged;
         'launcher.ProgressChanged += Launcher_ProgressChanged;
 
-        ' check and download game files
-        Dim process = Await launcher.CreateProcessAsync("1.16.5", New MLaunchOption With {
-            .session = Me.Session,
-            .MaximumRamMb = 4096
+        '.ServerIp = "nebuland.net",
+        ' check and download game files 1.12.2-forge1.12.2-14.23.5.2838
+        Dim process = Await launcher.CreateProcessAsync("1.16.5-forge-36.2.34", New MLaunchOption With {
+            .Session = Me.Session,
+            .MaximumRamMb = 6144,
+            .GameLauncherName = "launch_mod"
         })
 
         ' start game
