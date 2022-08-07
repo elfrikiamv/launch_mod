@@ -30,6 +30,7 @@ Partial Class Form1
         Me.btnamv_config = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_info = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.btnamv_play = New launch_mod.CustomControls.AmvControls.AmvButton()
+        Me.btnamv_runmc = New launch_mod.CustomControls.AmvControls.AmvButton()
         Me.SuspendLayout()
         '
         'bw_checkupdate
@@ -129,6 +130,28 @@ Partial Class Form1
         Me.btnamv_play.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnamv_play.UseVisualStyleBackColor = False
         '
+        'btnamv_runmc
+        '
+        Me.btnamv_runmc.BackColor = System.Drawing.Color.Transparent
+        Me.btnamv_runmc.BackgroundColor = System.Drawing.Color.Transparent
+        Me.btnamv_runmc.BorderColor = System.Drawing.Color.White
+        Me.btnamv_runmc.BorderRadius = 22
+        Me.btnamv_runmc.BorderSize = 1
+        Me.btnamv_runmc.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnamv_runmc.FlatAppearance.BorderSize = 0
+        Me.btnamv_runmc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnamv_runmc.Font = New System.Drawing.Font("Caviar Dreams", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnamv_runmc.ForeColor = System.Drawing.Color.White
+        Me.btnamv_runmc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnamv_runmc.Location = New System.Drawing.Point(154, 109)
+        Me.btnamv_runmc.Name = "btnamv_runmc"
+        Me.btnamv_runmc.Size = New System.Drawing.Size(171, 45)
+        Me.btnamv_runmc.TabIndex = 18
+        Me.btnamv_runmc.Text = "Play"
+        Me.btnamv_runmc.TextColor = System.Drawing.Color.White
+        Me.btnamv_runmc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnamv_runmc.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,6 +159,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(984, 461)
+        Me.Controls.Add(Me.btnamv_runmc)
         Me.Controls.Add(Me.gb_new_updates)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnamv_config)
@@ -158,4 +182,5 @@ Partial Class Form1
     Friend WithEvents btnamv_config As CustomControls.AmvControls.AmvButton
     Friend WithEvents Label2 As Label
     Friend WithEvents gb_new_updates As GroupBox
+    Friend WithEvents btnamv_runmc As CustomControls.AmvControls.AmvButton
 End Class

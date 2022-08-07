@@ -1,5 +1,7 @@
 ﻿Imports System.IO
-
+Imports CmlLib.Core
+Imports CmlLib.Core.Auth
+Imports CmlLib.Core.Auth.Microsoft.UI.WinForm
 Public Class Form1
 
     Dim version_compare As String = "https://pastebin.com/raw/Bmqb5CQA"
@@ -8,6 +10,7 @@ Public Class Form1
     Dim program_files As String = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86)
     'path roaming 
     Dim appdata As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+    Public Property Session As MSession
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -165,6 +168,31 @@ Public Class Form1
         Dim open_launcher_mc As New Process()
         open_launcher_mc.StartInfo.FileName = ruta_mc
         open_launcher_mc.Start()
+
+    End Sub
+
+    Private Async Sub btnamv_runmc_Click(sender As Object, e As EventArgs) Handles btnamv_runmc.Click
+
+        Dim loginForm As MicrosoftLoginForm = New MicrosoftLoginForm()
+        Dim session As MSession = Await loginForm.ShowLoginDialog()
+        Me.Session = session
+        'MessageBox.Show("Login success : " + session.Username);
+
+        Dim path = New MinecraftPath() ' default game path
+        Dim launcher = New CMLauncher(path)
+
+        ' register event handlers
+        'launcher.FileChanged += Launcher_FileChanged;
+        'launcher.ProgressChanged += Launcher_ProgressChanged;
+
+        ' check and download game files
+        Dim process = Await launcher.CreateProcessAsync("1.16.5", New MLaunchOption With {
+            .session = Me.Session,
+            .MaximumRamMb = 4096
+        })
+
+        ' start game
+        process.Start()
 
     End Sub
 End Class
